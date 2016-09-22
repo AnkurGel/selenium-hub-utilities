@@ -27,3 +27,11 @@ BROWSERSTACK_USERNAME=your_user_name BROWSERSTACK_ACCESS_KEY=your_access_key nod
 
 > --------------------------------------------------------------    
 > > You can select the best hub endpoint according to report.
+
+
+#### Options
+
+* Add `REGION=region_name` to select a particular region. The available regions are:    
+  * us_east   
+  * us_west   
+  * eu_west   
