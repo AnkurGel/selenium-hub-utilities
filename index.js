@@ -2,7 +2,15 @@ var webdriver = require('selenium-webdriver');
 var q = require('q');
 var underscore = require('underscore');
 
-var keyCount = 5;
+var keyCount = +process.env['KEYCOUNT'] || 100;
+
+function checkArguments() {
+  if(!process.env['BROWSERSTACK_USERNAME'] || !process.env['BROWSERSTACK_ACCESS_KEY']){
+    console.log("Correct usage: BROWSERSTACK_USERNAME=your_user_name BROWSERSTACK_ACCESS_KEY=your_access_key node index.js ");
+    process.exit();
+  }
+}
+
 var defaultEndpoints = [
   "http://hub.browserstack.com",
   "https://hub.browserstack.com",
@@ -15,8 +23,8 @@ var capabilities = {
   'browserName' : 'chrome', 
   'os': 'OS X',
   'os_version': 'Yosemite',
-  'browserstack.user': 'ankurgoel2',
-  'browserstack.key': '9AsCNV1GyRT9wmauzzys'
+  'browserstack.user': process.env['BROWSERSTACK_USERNAME'],
+  'browserstack.key': process.env['BROWSERSTACK_ACCESS_KEY'],
 };
 
 function newTest(driverUrl) {
@@ -39,8 +47,10 @@ function newTest(driverUrl) {
   return defer.promise;
 }
 
+checkArguments();
 defaultEndpoints.reduce(function(promise, nextUrl) {
   return promise.then(function() {
+    console.log("Running test with", nextUrl + ". Please wait...");
     return newTest(nextUrl);
   });
 }, q());
