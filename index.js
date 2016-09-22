@@ -47,8 +47,8 @@ function newTest(driverUrl) {
 function generateReport() {
   console.log("--------------------------------------------------------------");
   console.log("----------------------------REPORT----------------------------");
-  underscore.sortBy(underscore.pairs(results), (k, v) => {
-    return v;
+  underscore.sortBy(underscore.pairs(results), (hubTime) => {
+    return hubTime[1];
   }).forEach((hub) => {
     console.log("--", hub[0], hub[1], "ms", "--");
   });
