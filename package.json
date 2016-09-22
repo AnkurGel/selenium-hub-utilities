@@ -1,0 +1,16 @@
+{
+  "name": "hub-utility",
+  "version": "1.0.0",
+  "description": "Hub utilities",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ankur Goel",
+  "license": "ISC",
+  "dependencies": {
+    "q": "^1.4.1",
+    "selenium-webdriver": "^2.53.3",
+    "underscore": "^1.8.3"
+  }
+}
