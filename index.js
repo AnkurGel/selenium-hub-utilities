@@ -4,6 +4,7 @@ var underscore = require('underscore');
 var constants = require('./constants');
 
 var keyCount = +process.env['KEYCOUNT'] || 100;
+var selectedHubs = constants.regions[process.env['REGION'] || 'global'];
 
 function checkArguments() {
   if(!process.env['BROWSERSTACK_USERNAME'] || !process.env['BROWSERSTACK_ACCESS_KEY']){
@@ -55,7 +56,8 @@ function generateReport() {
   console.log("--------------------------------------------------------------");
 }
 
-var runAllTests = constants.conf.global.reduce(function(promise, nextUrl) {
+checkArguments();
+var runAllTests = selectedHubs.reduce(function(promise, nextUrl) {
   return promise.then(() => {
     console.log("Running test with", nextUrl + ". Please wait...");
     return newTest(nextUrl);
