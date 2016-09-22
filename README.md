@@ -16,6 +16,7 @@ BROWSERSTACK_USERNAME=your_user_name BROWSERSTACK_ACCESS_KEY=your_access_key nod
 > Time taken by http://hub-cloud-us.browserstack.com - 17680 ms    
 > Running test with https://hub-cloud-us.browserstack.com. Please wait...    
 > Time taken by https://hub-cloud-us.browserstack.com - 40771 ms    
+
 > --------------------------------------------------------------    
 > ----------------------------REPORT----------------------------    
 > -- http://hub-us.browserstack.com 5948 ms --    
@@ -23,5 +24,6 @@ BROWSERSTACK_USERNAME=your_user_name BROWSERSTACK_ACCESS_KEY=your_access_key nod
 > -- https://hub-us.browserstack.com 14325 ms --    
 > -- http://hub-cloud-us.browserstack.com 17680 ms --    
 > -- https://hub-cloud-us.browserstack.com 40771 ms --    
+
 > --------------------------------------------------------------    
 > > You can select the best hub endpoint according to report.
