@@ -9,10 +9,12 @@
   "author": "Ankur Goel",
   "license": "ISC",
   "dependencies": {
+    "bufferutil": "^1.2.1",
     "command-line-args": "^3.0.1",
     "js-yaml": "^3.6.1",
     "q": "^1.4.1",
     "selenium-webdriver": "^2.53.3",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "utf-8-validate": "^1.2.1"
   }
 }
