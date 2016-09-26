@@ -2,9 +2,24 @@
 > Set of utilities to measure performance of selenium tests.
 
 ### Select best hub for [BrowserStack Automate](https://browserstack.com/automate)
+Install the [latest release](https://github.com/AnkurGel/selenium-hub-utilities/releases).    
+#### For Mac
+```
+BROWSERSTACK_USERNAME=your_user_name BROWSERSTACK_ACCESS_KEY=your_access_key ./selenium-hub-utilities-mac
+```
+#### For Linux
+```
+BROWSERSTACK_USERNAME=your_user_name BROWSERSTACK_ACCESS_KEY=your_access_key ./selenium-hub-utilities-linux-x86
+```
+#### For Windows
+```
+set BROWSERSTACK_USERNAME=your_user_name && set BROWSERSTACK_ACCESS_KEY=your_access_key && .\selenium-hub-utilities-win32.exe
+```
+#### From git project
 ```
 BROWSERSTACK_USERNAME=your_user_name BROWSERSTACK_ACCESS_KEY=your_access_key node index.js
 ```
+### Results
 
 > Running test with http://hub-us.browserstack.com. Please wait...    
 > Time taken by http://hub-us.browserstack.com - 5948 ms    
@@ -35,3 +50,4 @@ BROWSERSTACK_USERNAME=your_user_name BROWSERSTACK_ACCESS_KEY=your_access_key nod
   * us_east   
   * us_west   
   * eu_west   
+
