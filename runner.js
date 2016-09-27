@@ -2,7 +2,7 @@ var q = require("q"),
     fullTest = require('./lib/fullTest');
 
 
-function runFullTests() {
+function runFullTests(cb) {
     var runAllTests = fullTest.selectedHubs.reduce(function(promise, nextUrl) {
         fullTest.checkArguments();
         return promise.then(() => {
@@ -10,7 +10,10 @@ function runFullTests() {
             return fullTest.newTest(nextUrl);
         });
     }, q());
-    runAllTests.then(fullTest.generateReport);
+    runAllTests.then(function(){
+      fullTest.generateReport();
+      if(cb) cb();
+    });
 }
 
 exports.runFullTests = runFullTests;
