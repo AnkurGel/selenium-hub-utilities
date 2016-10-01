@@ -15,7 +15,7 @@ function runFullTests() {
 
 function enableKeepAlive() {
     console.log("\n\nUsing keep alive:\n");
-    require('./keep-alive.js');
+    require('./keep-alive');
 }
 
 exports.runFullTests = runFullTests;

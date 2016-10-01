@@ -23,4 +23,4 @@ http.request = function(options, callback){
     options["agent"] = agent;
     return httpRequest(options, callback);
   }
-}
+};
