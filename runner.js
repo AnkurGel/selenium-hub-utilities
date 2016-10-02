@@ -2,7 +2,7 @@ var q = require("q"),
     fullTest = require('./lib/fullTest');
 
 
-function runFullTests(cb) {
+function runFullTests() {
     var runAllTests = fullTest.selectedHubs.reduce(function(promise, nextUrl) {
         fullTest.checkArguments();
         return promise.then(() => {
@@ -10,10 +10,13 @@ function runFullTests(cb) {
             return fullTest.newTest(nextUrl);
         });
     }, q());
-    runAllTests.then(function(){
-      fullTest.generateReport();
-      if(cb) cb();
-    });
+    return runAllTests.then(fullTest.generateReport);
+}
+
+function enableKeepAlive() {
+    console.log("\n\nUsing keep alive:\n");
+    require('./keep-alive');
 }
 
 exports.runFullTests = runFullTests;
+exports.enableKeepalive = enableKeepAlive;
