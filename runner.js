@@ -10,7 +10,13 @@ function runFullTests() {
             return fullTest.newTest(nextUrl);
         });
     }, q());
-    runAllTests.then(fullTest.generateReport);
+    return runAllTests.then(fullTest.generateReport);
+}
+
+function enableKeepAlive() {
+    console.log("\n\nUsing keep alive:\n");
+    require('./keep-alive');
 }
 
 exports.runFullTests = runFullTests;
+exports.enableKeepalive = enableKeepAlive;
