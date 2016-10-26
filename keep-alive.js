@@ -12,7 +12,7 @@ var secureAgent = new https.Agent({
 });
 
 var httpRequest = http.request;
-var httpsRequest = http.request;
+var httpsRequest = https.request;
 
 http.request = function(options, callback){
   if(options.protocol == "https:"){
